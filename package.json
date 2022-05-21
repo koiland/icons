@@ -1,39 +1,55 @@
 {
-  "name": "koi-ui-kit",
+  "name": "@koiland/icons",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/node/index.js",
   "module": "dist/index.js",
   "files": [
     "dist"
   ],
   "scripts": {
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -o .storybookout"
+    "build": "npm run svgr && rollup -c",
+    "prebuild": "rimraf src/icons && rimraf dist",
+    "svgr": "svgr --typescript --title-prop -d src/icons -- src/static/svg",
+    "storybook": "npm run prebuild && npm run svgr && start-storybook -p 6006",
+    "build-storybook": "npm run prebuild && npm run svgr && build-storybook"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/koiland/icons"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "icons",
+    "svg",
+    "react"
+  ],
+  "author": "dev@koiland.io",
   "license": "ISC",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/koiland/icons/issues"
   },
   "browserslist": [
     "> 0.25%, not dead"
   ],
   "sideEffects": false,
-  "homepage": "https://koiland.github.io/koi-ui-kit/",
+  "homepage": "https://github.com/koiland/icons",
   "devDependencies": {
-    "@babel/core": "^7.17.10",
-    "@storybook/addon-actions": "^6.4.22",
-    "@storybook/addon-essentials": "^6.4.22",
-    "@storybook/addon-interactions": "^6.4.22",
-    "@storybook/addon-links": "^6.4.22",
-    "@storybook/react": "^6.4.22",
+    "@babel/core": "^7.18.0",
+    "@babel/plugin-transform-runtime": "^7.16.4",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@storybook/addon-actions": "^6.5.3",
+    "@storybook/addon-essentials": "^6.5.3",
+    "@storybook/addon-interactions": "^6.5.3",
+    "@storybook/addon-links": "^6.5.3",
+    "@storybook/builder-webpack4": "^6.5.3",
+    "@storybook/manager-webpack4": "^6.5.3",
+    "@storybook/react": "^6.5.3",
     "@storybook/testing-library": "0.0.11",
+    "@svgr/cli": "^6.2.1",
+    "@types/react": "^17.0.37",
+    "@typescript-eslint/eslint-plugin": "^4.7.0",
+    "@typescript-eslint/parser": "^4.7.0",
     "babel-loader": "^8.2.5",
     "eslint": "^7.13.0",
     "eslint-config-airbnb": "^18.2.0",
@@ -44,22 +60,20 @@
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-storybook": "^0.5.12",
     "husky": "^7.0.4",
     "prettier": "^2.2.1",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "styled-components": "^5.3.5",
-    "tslint-config-airbnb": "^5.11.1",
-    "tslint-config-prettier": "^1.18.0",
-    "typescript": "^4.5.4",
-    "@typescript-eslint/eslint-plugin": "^4.7.0",
-    "@typescript-eslint/parser": "^4.7.0",
-    "@types/react": "^17.0.37",
-    "@types/styled-components": "^5.1.19",
-    "svg-sprite-loader": "^6.0.11",
-    "svgo-loader": "^3.0.0"
+    "react-dom": "^18.1.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.61.1",
+    "rollup-plugin-filesize": "^9.1.1",
+    "styled-components": "^5.3.5"
   },
   "peerDependencies": {
     "react": ">= 18.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.16.3"
   }
 }

@@ -2,36 +2,20 @@ module.exports = {
   root: true,
   env: {
     es6: true,
-    browser: true
+    browser: true,
   },
-  plugins: ['react', 'prettier', 'react-hooks', '@typescript-eslint'],
-  extends: ["airbnb", "prettier", "prettier/react", "airbnb-typescript", "prettier/@typescript-eslint"],
-  parser: '@typescript-eslint/parser',
+  plugins: ['react', 'prettier', 'react-hooks'],
+  extends: ['airbnb', 'prettier', 'prettier/react', 'plugin:storybook/recommended'],
   parserOptions: {
-    ecmaVersion: 2018,
-    project: './tsconfig.json',
+    ecmaVersion: 8,
     ecmaFeatures: {
       jsx: true,
       modules: true,
-      experimentalObjectRestSpread: true
-    }
+      experimentalObjectRestSpread: true,
+    },
   },
   rules: {
-    'radix': 0,
-    '@typescript-eslint/array-type': ['error', {
-      'array': true
-    }],
-    '@typescript-eslint/naming-convention': ['error', {
-      selector: 'variableLike',
-      format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
-      leadingUnderscore: 'allow',
-      trailingUnderscore: 'allow'
-    }],
-    '@typescript-eslint/no-extra-non-null-assertion': 'error',
-    '@typescript-eslint/keyword-spacing': 'error',
-    '@typescript-eslint/no-explicit-any': 'error',
-    '@typescript-eslint/no-magic-numbers': 'warn',
-    '@typescript-eslint/no-unused-vars': 'error',
+    radix: 0,
     'react/prop-types': 'off',
     'no-console': 0,
     'comma-dangle': 0,
@@ -61,26 +45,34 @@ module.exports = {
     'react/require-default-props': 0,
     'react/jsx-props-no-spreading': 0,
     'arrow-parens': 1,
-    /* WARN: TS doesn't understand dynamic type as prop */
-    'react/button-has-type': 0,
-    'quotes': ['error', 'single', {
-      avoidEscape: true,
-      allowTemplateLiterals: false
-    }],
-    'max-len': ['error', {
-      'code': 120
-    }],
+    quotes: [
+      'error',
+      'single',
+      {
+        avoidEscape: true,
+        allowTemplateLiterals: false,
+      },
+    ],
+    'max-len': [
+      'error',
+      {
+        code: 140,
+      },
+    ],
     'react/jsx-wrap-multilines': 0,
-    "implicit-arrow-linebreak": 0,
-    'prettier/prettier': ['error', {
-      trailingComma: 'es5',
-      tabWidth: 2,
-      printWidth: 120,
-      semi: true,
-      useTabs: false,
-      singleQuote: true,
-      bracketSpacing: true,
-      arrowParens: 'always'
-    }]
-  }
+    'implicit-arrow-linebreak': 0,
+    'prettier/prettier': [
+      'error',
+      {
+        trailingComma: 'es5',
+        tabWidth: 2,
+        printWidth: 140,
+        semi: true,
+        useTabs: false,
+        singleQuote: true,
+        bracketSpacing: true,
+        arrowParens: 'always',
+      },
+    ],
+  },
 };

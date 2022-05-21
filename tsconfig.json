@@ -16,8 +16,9 @@
   "include": ["src/**/*"],
   "exclude": [
     "node_modules",
+    "build",
     "dist",
-    // "src/**/*.stories.tsx",
+    "src/icons",
     "src/**/*.test.tsx"
   ]
 }

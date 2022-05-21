@@ -1,0 +1,62 @@
+:root {
+  /* Font Families */
+  --font-family-default: 'Roboto', Helvetica, Arial, sans-serif;
+
+  /* Font Families Shortcut */
+  --ff-def: var(--font-family-default);
+
+  /* Font Sizes */
+  --font-size-12: 12px;
+  --font-size-14: 14px;
+  --font-size-16: 16px;
+  --font-size-18: 18px;
+  --font-size-20: 20px;
+
+  /* Font Sizes Shortcuts */
+  --fs-12: var(--font-size-12);
+  --fs-14: var(--font-size-14);
+  --fs-16: var(--font-size-16);
+  --fs-18: var(--font-size-18);
+  --fs-20: var(--font-size-20);
+
+  /* Line Heights */
+  --line-height-16: 16px;
+  --line-height-20: 20px;
+  --line-height-24: 24px;
+  --line-height-28: 28px;
+
+  /* Line Heights Shortcuts */
+  --lh-16: var(--line-height-16);
+  --lh-20: var(--line-height-20);
+  --lh-24: var(--line-height-24);
+  --lh-28: var(--line-height-28);
+
+  /* Font Weight */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-bold: 500;
+
+  /* Font Weight Shortcuts */
+  --fw-l: var(--font-weight-light);
+  --fw-r: var(--font-weight-regular);
+  --fw-b: var(--font-weight-bold);
+
+  /* Font Mixins */
+  --font-12-light: var(--fw-l) var(--fs-12)/var(--lh-16) var(--ff-def);
+  --font-14-light: var(--fw-l) var(--fs-14)/var(--lh-20) var(--ff-def);
+  --font-16-light: var(--fw-l) var(--fs-16)/var(--lh-24) var(--ff-def);
+  --font-18-light: var(--fw-l) var(--fs-18)/var(--lh-28) var(--ff-def);
+  --font-20-light: var(--fw-l) var(--fs-20)/var(--lh-28) var(--ff-def);
+
+  --font-12-regular: var(--fw-r) var(--fs-12)/var(--lh-16) var(--ff-def);
+  --font-14-regular: var(--fw-r) var(--fs-14)/var(--lh-20) var(--ff-def);
+  --font-16-regular: var(--fw-r) var(--fs-16)/var(--lh-24) var(--ff-def);
+  --font-18-regular: var(--fw-r) var(--fs-18)/var(--lh-28) var(--ff-def);
+  --font-20-regular: var(--fw-r) var(--fs-20)/var(--lh-28) var(--ff-def);
+
+  --font-12-bold: var(--fw-b) var(--fs-12)/var(--lh-16) var(--ff-def);
+  --font-14-bold: var(--fw-b) var(--fs-14)/var(--lh-20) var(--ff-def);
+  --font-16-bold: var(--fw-b) var(--fs-16)/var(--lh-24) var(--ff-def);
+  --font-18-bold: var(--fw-b) var(--fs-18)/var(--lh-28) var(--ff-def);
+  --font-20-bold: var(--fw-b) var(--fs-20)/var(--lh-28) var(--ff-def);
+}
