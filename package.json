@@ -9,9 +9,9 @@
   "scripts": {
     "build": "npm run svgr && rollup -c",
     "prebuild": "rimraf src/icons && rimraf dist",
-    "svgr": "svgr --typescript --title-prop -d src/icons -- src/static/svg",
+    "svgr": "svgr --typescript --title-prop --no-dimensions -d src/icons -- src/static/svg",
     "storybook": "npm run prebuild && npm run svgr && start-storybook -p 6006",
-    "build-storybook": "npm run prebuild && npm run svgr && build-storybook"
+    "build-storybook": "npm run prebuild && npm run svgr && build-storybook -o docs-build"
   },
   "repository": {
     "type": "git",
