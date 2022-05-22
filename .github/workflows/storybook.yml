@@ -10,9 +10,9 @@ jobs:
       - name: Merge master -> gh-pages
         uses: bambamboole/gha-upmerge@v1.0.1
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           from_branch: master
           to_branch: gh-pages
+          push_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Checkout 🛎️
         uses: actions/checkout@v2.3.1
         with:
