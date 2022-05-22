@@ -12,7 +12,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Merge master -> gh-pages
-        uses: bambamboole/gha-upmerge@master
+        uses: bambamboole/gha-upmerge@v1.0.1
         with:
           from_branch: master
           to_branch: gh-pages
