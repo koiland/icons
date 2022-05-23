@@ -20,6 +20,9 @@
     "type": "git",
     "url": "https://github.com/koiland/icons"
   },
+  "publishConfig": {
+    "@aelsv-koi:registry": "https://npm.pkg.github.com"
+  },
   "keywords": [
     "icons",
     "svg",
