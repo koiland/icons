@@ -13,7 +13,8 @@
     "svgo": "svgo --config ./svgo.config.js -f ./src/static/svg -o ./src/static/svg",
     "svgr": "svgr --typescript --title-prop --no-dimensions -d src/icons -- src/static/svg",
     "storybook": "npm run clean && npm run prebuild:icons && start-storybook -p 6006",
-    "build-storybook": "npm run clean && npm run prebuild:icons && build-storybook -o docs-build"
+    "build-storybook": "npm run clean && npm run prebuild:icons && build-storybook -o docs-build",
+    "lint": "eslint src/ --fix"
   },
   "repository": {
     "type": "git",
@@ -26,19 +27,68 @@
   ],
   "author": "dev@koiland.io",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/koiland/icons/issues"
-  },
+  "sideEffects": false,
+  "homepage": "https://github.com/koiland/icons",
   "browserslist": [
     "> 0.25%, not dead"
   ],
-  "sideEffects": false,
-  "homepage": "https://github.com/koiland/icons",
+  "bugs": {
+    "url": "https://github.com/koiland/icons/issues"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "FORCE_COLOR=1 lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.(js|jsx|ts|tsx)": [
+      "npm run lint",
+      "git add"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "references-empty": [
+        2,
+        "never"
+      ],
+      "type-enum": [
+        2,
+        "always",
+        [
+          "feat",
+          "fix",
+          "hotfix",
+          "docs",
+          "improvement",
+          "refactor"
+        ]
+      ],
+      "header-max-length": [
+        2,
+        "always",
+        100
+      ]
+    },
+    "parserPreset": {
+      "parserOpts": {
+        "issuePrefixes": [
+          "ISSUE-"
+        ]
+      }
+    }
+  },
   "devDependencies": {
     "@babel/core": "^7.18.0",
     "@babel/plugin-transform-runtime": "^7.16.4",
     "@babel/preset-env": "^7.16.4",
     "@babel/preset-react": "^7.16.0",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-typescript": "^8.3.2",
     "@storybook/addon-actions": "^6.5.3",
@@ -64,7 +114,8 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-storybook": "^0.5.12",
-    "husky": "^7.0.4",
+    "husky": "^4.3.8",
+    "lint-staged": "^8.0.4",
     "prettier": "^2.2.1",
     "react": "^18.0.0",
     "react-dom": "^18.1.0",
