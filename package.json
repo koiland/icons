@@ -18,10 +18,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/koiland/icons"
+    "url": "git://github.com/koiland/icons.git"
   },
   "publishConfig": {
-    "@aelsv-koi:registry": "https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com"
   },
   "keywords": [
     "icons",
