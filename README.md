@@ -1,8 +1,23 @@
-# Icons
+# SVG Icons Library as React components
+Just put SVG's to `./src/static/svg` folder and magically get optimized React component.
 
-## TODO:
-1. ~Setup rollup~
-2. ~Bundle up icons for further delivery~
-3. ~Add Icon component to display icons in Storybook~
-4. Add GitHub actions to auto build if new icons are added
-5. ~Add script for auto generation of entry file~
+## Get a new build without code touching:
+1. 🏗 Manually put your new svg to `./src/static/svg` folder via GitHub
+2. 🔔 Create Pull Request to `master`
+3. 👍 Get approves from developers
+4. 🕗 Wait till GitHub Actions finished
+5. 🎉 Whoola! New build is released!
+
+## Local development
+Please use following rules to build and check project locally
+
+### Check SVG optimization manually
+```
+npm run prebuild:icons
+```
+This will remove unnecessary attributes and generate React components from the SVG.
+
+### Run Storybook locally
+```
+npm run storybook
+```
