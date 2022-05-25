@@ -1,0 +1,3 @@
+# The team-frontend-core will be requested for review when someone opens a pull request
+# Because this repo is used by other repos
+@koiland/team-frontend-core
