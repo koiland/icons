@@ -24,19 +24,14 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof Icon>;
 
-export const Default = <P extends {}>({ props = {} as P }: TIconProps<P>) => (
-  <Icon glyph={ICONS.Bag} {...props} />
+export const Default = <P extends unknown>({ props = {} as P }: TIconProps<P>): JSX.Element => <Icon glyph={ICONS.Bag} {...props} />;
+
+export const Icons = <P extends unknown>({ props = {} as P }: TIconProps<P>): JSX.Element => (
+  <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', maxWidth: '600px' }}>
+    {Object.keys(ICONS).map((icon: string) => (
+      <div key={icon} style={{ margin: '5px' }} title={icon}>
+        <Icon glyph={ICONS[icon]} {...props} />
+      </div>
+    ))}
+  </div>
 );
-
-export const Icons = <P extends {}>({ props = {} as P }: TIconProps<P>) => {
-
-  return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', maxWidth: '600px' }}>
-      {Object.keys(ICONS).map((icon: string) => (
-        <div key={icon} style={{ margin: '5px' }} title={icon}>
-          <Icon glyph={ICONS[icon]} {...props} />
-        </div>
-      ))}
-    </div>
-  );
-}
