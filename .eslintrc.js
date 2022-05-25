@@ -4,8 +4,16 @@ module.exports = {
     es6: true,
     browser: true,
   },
-  plugins: ['react', 'prettier', 'react-hooks'],
-  extends: ['airbnb', 'prettier', 'prettier/react', 'plugin:storybook/recommended'],
+  parser: '@typescript-eslint/parser',
+  plugins: ['react', 'prettier', 'react-hooks', '@typescript-eslint'],
+  extends: [
+    'airbnb',
+    'prettier',
+    'prettier/react',
+    'plugin:storybook/recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+  ],
   parserOptions: {
     ecmaVersion: 8,
     ecmaFeatures: {
@@ -15,6 +23,8 @@ module.exports = {
     },
   },
   rules: {
+    'no-use-before-define': 'off',
+    '@typescript-eslint/no-use-before-define': ['error'],
     radix: 0,
     'react/prop-types': 'off',
     'no-console': 0,
