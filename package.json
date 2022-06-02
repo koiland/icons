@@ -2,20 +2,20 @@
   "name": "@koiland/icons",
   "version": "1.0.0",
   "description": "SVG icons",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.esm.js",
   "files": [
     "dist"
   ],
   "scripts": {
     "build": "npm run clean && npm run prebuild:icons && rollup -c",
-    "clean": "rimraf src/icons && rimraf ./dist",
+    "clean": "rimraf src && rimraf ./dist",
     "prebuild:icons": "npm run svgo && npm run svgr",
-    "svgo": "svgo --config ./svgo.config.js -f ./src/static/svg -o ./src/static/svg",
-    "svgr": "svgr --typescript --title-prop --no-dimensions -d src/icons -- src/static/svg",
+    "svgo": "svgo --config ./svgo.config.js -f ./static/svg -o ./static/svg",
+    "svgr": "svgr --typescript --title-prop --no-dimensions -d src/ -- ./static/svg",
     "storybook": "npm run clean && npm run prebuild:icons && start-storybook -p 6006",
     "build-storybook": "npm run clean && npm run prebuild:icons && build-storybook -o docs-build",
-    "lint": "eslint src/ --fix"
+    "lint": "eslint components/ --fix"
   },
   "repository": {
     "type": "git",
@@ -92,8 +92,8 @@
     "react-dom": "^18.1.0",
     "rimraf": "^3.0.2",
     "rollup": "^2.61.1",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-filesize": "^9.1.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
     "styled-components": "^5.3.5",
     "svgo": "^2.8.0",
     "typescript": "^4.5.0"
