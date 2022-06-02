@@ -1,6 +1,6 @@
 {
   "name": "@koiland/icons",
-  "version": "1.0.0",
+  "version": "0.0.auto",
   "description": "SVG icons",
   "module": "dist/index.esm.js",
   "files": [
