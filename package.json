@@ -2,8 +2,8 @@
   "name": "@koiland/icons",
   "version": "1.0.0",
   "description": "SVG icons",
-  "main": "dist/node/index.js",
-  "module": "dist/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "files": [
     "dist"
   ],
