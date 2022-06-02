@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
     "declaration": true,
-    "declarationDir": "dist",
+    "outDir": "dist",
+    "emitDeclarationOnly": true,
+    "declarationDir": "./",
     "module": "esnext",
     "target": "esnext",
     "importHelpers": false,
@@ -11,14 +13,12 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "baseUrl": "./src"
+    "baseUrl": "./"
   },
   "include": ["src/**/*"],
   "exclude": [
     "node_modules",
     "build",
     "dist",
-    "src/icons",
-    "src/**/*.test.tsx"
   ]
 }
