@@ -1,4 +1,4 @@
 /*@import '../src/styles/fonts.css';*/
-@import '../src/static/styles/colors.css';
-@import '../src/static/styles/shadows.css';
-@import '../src/static/styles/transitions.css';
+@import '../static/styles/colors.css';
+@import '../static/styles/shadows.css';
+@import '../static/styles/transitions.css';

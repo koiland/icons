@@ -2,4 +2,5 @@
 .idea
 .storybookout
 src/icons
+src/
 dist/

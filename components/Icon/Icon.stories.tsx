@@ -8,7 +8,7 @@ import { TIconProps } from './Icon.types';
 import { Icon } from './Icon';
 
 /* @Icons */
-import * as ICONS from 'icons';
+import * as ICONS from '../../src';
 
 export default {
   title: 'Icon',
