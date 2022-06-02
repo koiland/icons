@@ -8,10 +8,10 @@ on:
 jobs:
   build_test_release:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v2
-      - with:
-          fetch-depth: 0
+
       - name: Use Node.js 14.x
         uses: actions/setup-node@v1
         with:
@@ -20,12 +20,19 @@ jobs:
           scope: '@koiland'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.KOILAND_GITHUB_TOKEN }}
+
       - name: Install dependencies
         run: npm install
-      - name: Lint
-        run: npm run lint
+
       - name: Build
         run: npm run build
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npm test
+
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
