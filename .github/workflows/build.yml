@@ -22,11 +22,11 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.KOILAND_GITHUB_TOKEN }}
 
-      - name: Install dependencies
+      - name: Install dependencies 🏗
         run: npm install
 
-      - name: Lint
+      - name: Lint ✅
         run: npm run lint
 
-      - name: Build
+      - name: Build 🚧👷
         run: npm run build
