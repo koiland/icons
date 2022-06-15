@@ -30,7 +30,7 @@
     "react"
   ],
   "author": "dev@koiland.io",
-  "license": "ISC",
+  "license": "UNLICENSED",
   "sideEffects": false,
   "homepage": "https://github.com/koiland/icons",
   "browserslist": [
