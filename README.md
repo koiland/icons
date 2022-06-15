@@ -2,7 +2,7 @@
 Just put SVG's to `./src/static/svg` folder and magically get optimized React component.
 
 ## Get a new build without code touching:
-1. 🏗 Manually put your new svg to `./src/static/svg` folder via GitHub
+1. 🏗 Manually put your new svg to `./static/svg` folder via GitHub
 2. 🔔 Create Pull Request to `master`
 3. 👍 Get approves from developers
 4. 🕗 Wait till GitHub Actions finished
