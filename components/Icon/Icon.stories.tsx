@@ -1,8 +1,6 @@
 import React from 'react';
+import styled from 'styled-components';
 import { ComponentMeta } from '@storybook/react';
-
-/* @Types */
-import { TIconProps } from './Icon.types';
 
 /* @Components */
 import { Icon } from './Icon';
@@ -14,6 +12,7 @@ export default {
   title: 'Icon',
   component: Icon,
   parameters: {
+    layout: 'default',
     docs: {
       description: {
         component: 'Preview for icons',
@@ -21,17 +20,49 @@ export default {
     },
   },
   args: {},
-  argTypes: {},
+  argTypes: {
+    size: {
+      control: 'select',
+      defaultValue: 'md',
+    },
+  },
 } as ComponentMeta<typeof Icon>;
 
-export const Default = <P extends unknown>({ props = {} as P }: TIconProps<P>): JSX.Element => <Icon glyph={ICONS.Bag} {...props} />;
+const ItemStyled = styled.div(() => ({
+  display: 'flex',
+  width: '100%',
+  maxWidth: '20%',
+  margin: '0 2.5% 2.5%',
+  alignItems: 'center',
+  padding: '8px 14px',
+  borderRadius: '4px',
+  boxShadow: 'rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.05) 0px 5px 15px 0px',
+  boxSizing: 'border-box',
+}));
 
-export const Icons = <P extends unknown>({ props = {} as P }: TIconProps<P>): JSX.Element => (
-  <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', maxWidth: '600px' }}>
+const CaptionStyled = styled.span(() => ({
+  color: '#333',
+  fontSize: '14px',
+  paddingLeft: '10px',
+  textOverflow: 'ellipsis',
+  whiteSpace: 'nowrap',
+  overflow: 'hidden',
+
+  '&:before': {
+    content: '""',
+    width: '1px',
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.1)',
+  },
+}));
+
+export const Icons = ({ ...args }): JSX.Element => (
+  <div style={{ display: 'flex', flexWrap: 'wrap', margin: '2rem' }}>
     {Object.keys(ICONS).map((icon: string) => (
-      <div key={icon} style={{ margin: '5px' }} title={icon}>
-        <Icon glyph={ICONS[icon]} {...props} />
-      </div>
+      <ItemStyled key={icon}>
+        <Icon glyph={ICONS[icon]} {...args} />
+        <CaptionStyled>{icon}</CaptionStyled>
+      </ItemStyled>
     ))}
   </div>
 );

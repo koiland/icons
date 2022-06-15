@@ -6,8 +6,8 @@ import { TIconProps } from './Icon.types';
 /* @Styled */
 import { IconStyled } from './Icon.styled';
 
-export const Icon = <P extends unknown>({ glyph: Glyph, size = 'lg', appearance, style, props = {} as P }: TIconProps<P>): JSX.Element => (
-  <IconStyled size={size} appearance={appearance}>
+export const Icon = <P extends unknown>({ glyph: Glyph, size = 'md', color, style, props = {} as P }: TIconProps<P>): JSX.Element => (
+  <IconStyled size={size} color={color}>
     <Glyph style={style} {...props} />
   </IconStyled>
 );
