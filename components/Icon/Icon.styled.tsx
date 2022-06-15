@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 /* @Types */
-import { TIconSize, TIconAppearance, TIconSizeMap } from './Icon.types';
+import { TIconSize, TIconSizeMap } from './Icon.types';
 
 export const ICON_SIZE_MAP: TIconSizeMap = {
   xs: '16px',
@@ -11,12 +11,17 @@ export const ICON_SIZE_MAP: TIconSizeMap = {
   xlg: '40px',
 };
 
-export const IconStyled = styled.span<{ size: TIconSize; appearance: TIconAppearance }>(({ size, appearance }) => ({
+export const IconStyled = styled.span<{ size: TIconSize; color: string }>(({ size, color }) => ({
   display: 'flex',
+  flexShrink: '0',
   alignItems: 'center',
   justifyContent: 'center',
   width: ICON_SIZE_MAP[size],
   height: ICON_SIZE_MAP[size],
-  backgroundColor: `var(--${appearance}-200)`,
+  color,
   transition: 'transform var(--transition-default), fill var(--transition-default)',
+
+  '& > svg': {
+    fill: 'currentColor',
+  },
 }));
